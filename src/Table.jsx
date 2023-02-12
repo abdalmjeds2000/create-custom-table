@@ -1,10 +1,10 @@
-import React from'react';
+import React from 'react';
 
-const Table = () => {
+const Table = ({ config, data }) => {
   
   return (
     <div>
-      sad
+      asdas
     </div>
   )
 }
