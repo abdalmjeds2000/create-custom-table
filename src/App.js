@@ -13,7 +13,7 @@ export default function App() {
   const config = [
     {
       label: 'Name',
-      render: (row) => row,
+      render: (row) => row.name,
     },
     {
       label: 'Color',
@@ -21,13 +21,15 @@ export default function App() {
     },
     {
       label: 'Score',
-      render: (row) => row,
+      render: (row) => row.score,
     },
   ];
-
+  const keyFn = (row) => {
+    return row.name;
+  }
   return (
     <div>
-      <Table config={config} data={data} />
+      <Table config={config} data={data} keyFn={keyFn} />
     </div>
   );
 }
