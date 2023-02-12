@@ -1,11 +1,18 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 
 const Table = ({ config, data, keyFn }) => {
   const renderHeaders = (
     <tr className="border-b-2">
-      {config.map((col) => (
-        <td className="p-2 font-semibold">{col.label}</td>
-      ))}
+      {config.map((col) => {
+        if (col.header) {
+          return <Fragment key={col.label}>{col.header()}</Fragment>;
+        }
+        return (
+          <th key={col.label} className="p-2 font-semibold">
+            {col.label}
+          </th>
+        );
+      })}
     </tr>
   );
   const renderRows = data.map((row) => {

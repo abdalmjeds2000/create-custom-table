@@ -12,6 +12,7 @@ export default function App() {
   ];
   const config = [
     {
+      header: () => <th>Name H</th>,
       label: 'Name',
       render: (row) => row.name,
     },
