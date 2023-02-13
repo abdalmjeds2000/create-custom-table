@@ -1,6 +1,7 @@
 import React from 'react';
 import './style.css';
 import Table from './Table';
+import SortableTable from './SortableTable.jsx';
 
 export default function App() {
   const data = [
@@ -23,14 +24,15 @@ export default function App() {
     {
       label: 'Score',
       render: (row) => row.score,
+      sort: (row) => row.score,
     },
   ];
   const keyFn = (row) => {
     return row.name;
-  }
+  };
   return (
     <div>
-      <Table config={config} data={data} keyFn={keyFn} />
+      <SortableTable config={config} data={data} keyFn={keyFn} />
     </div>
   );
 }
