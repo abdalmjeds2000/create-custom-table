@@ -13,9 +13,11 @@ export default function App() {
   ];
   const config = [
     {
-      header: () => <th>Name H</th>,
+      // header not for srtable table
+      // header: () => <th>Name H</th>,
       label: 'Name',
       render: (row) => row.name,
+      sortValue: (row) => row.name,
     },
     {
       label: 'Color',
@@ -24,7 +26,7 @@ export default function App() {
     {
       label: 'Score',
       render: (row) => row.score,
-      sort: (row) => row.score,
+      sortValue: (row) => row.score,
     },
   ];
   const keyFn = (row) => {
